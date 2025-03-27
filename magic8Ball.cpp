@@ -1,50 +1,62 @@
+/*
+    The Magic 8-Ball program. 
+*/
+
+
 #include <iostream>
 #include <cstdlib>
 
+
 int main(){
 
-  // Your future is here 
-std::string question;
-  
-  std::string random;
+  //the % is the module symbol that returns the remainder
 
-  std::cout<<"MAGIC 8-BALL! Ask me anything\n";
+  srand(time(NULL));   
+  int answer = std::rand() % 10;
+  std::string question;
+
+//--
+
+  std::cout <<"MAGIC 8-Ball Ask me anything!\n";
   std::cin >> question;
 
-  srand(time(NULL));
-  int answer = std::rand() % 10;
+  std::cout << answer <<'\n';
 
-  if(answer == 1){
-    std::cout <<"It is certain.\n";
-  }
-  else if(answer == 2){
-    std::cout <<"It is decidedly so.\n";
-  }
-  else if(answer == 3){
-    std::cout <<"Without a doubt.\n";
-  }
-  else if(answer == 4){
-    std::cout <<"Yes - definitely.\n";
-  }
-  else if(answer == 5){
-    std::cout <<"You may rely on it.\n";
-  }
-   else if(answer == 6){
-    std::cout <<"As I see it, yes.\n";
-  }
-   else if(answer == 7){
-    std::cout <<"Most likely.\n";
-  }
-   else if(answer == 8){
-    std::cout <<"Outlook good.\n";
-  }
-   else if(answer == 9){
-    std::cout <<"Yes.\n";
-  }
-   else{
-    std::cout <<"Very doubtful.\n";
-  }
+  switch(answer){
+    case 0:
+      std::cout <<"It is certain.";
+      break;
+    case 1:
+      std::cout <<"It is decidedly so.";
+      break;
+    case 2:
+      std::cout <<"Outlook good.";
+      break;
+    case 3:
+      std::cout <<"Don't count on it.";
+      break;
+    case 4:
+      std::cout <<"As I see it, yes.";
+      break;
+    case 5:
+      std::cout <<"Signs point to yes.";
+      break;
+    case 6:
+      std::cout <<"Cannot predict now.";
+      break;
+    case 7:
+      std::cout <<"Without a doubt.";
+      break;
+    case 8:
+      std::cout <<"Reply hazy, try again.";
+      break;
+    case 9:
+      std::cout <<"My reply no.";
+      break;
+    default:
+      std::cout <<"Very doubtful.";
 
+  }
+    
   return 0;
-
 }
