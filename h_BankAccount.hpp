@@ -1,9 +1,12 @@
+#ifndef #H_BANKACCOUNT_HPP
+#define #H_BANKACCOUNT_HPP
+
 #include <string>
 #include <iostream>
-using namespace std;
+
 
 class BankAccount{
-  string accountNumber;
+  std::string accountNumber;
   double balance;
 
 public:
@@ -15,13 +18,15 @@ public:
     bool setWithdraw(double new_withdraw);
   };
 
-  BankAccount(string newAccount, double newBalance); //constructor
+  BankAccount(std::string newAccount, double newBalance); //constructor
   //getter methods:
   string getAccountNumber();
   double getBalance();
   //setter methods:
-  void setAccountNumber(string new_account_number);
+  void setAccountNumber(std::string new_account_number);
   void setBalance(double new_balance);
   
   
 };
+
+#endif
