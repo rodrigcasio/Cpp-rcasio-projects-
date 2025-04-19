@@ -17,9 +17,9 @@ public:
     accounts.push_back(BankAccount(accountNumber, initialBalance)); //using constructor of BankAccount class.. 
   }
   BankAccount* findAccount(std::string findAccountNumber){
-    for(int i = 0; i < account.size(); i++){
-      if(account[i).getAccountNumber() == findAcountNumber){
-        return &account[i];
+    for(BankAccount& account : accounts){
+      if(account.getAccountNumber() == findAccountNumber){
+        return &account;
       }
     }
     return nullptr;
