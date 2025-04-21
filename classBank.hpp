@@ -16,7 +16,7 @@ public:
   void createAccount(std::string accountNumber, double initialBalance){
     accounts.push_back(BankAccount(accountNumber, initialBalance)); //using constructor of BankAccount class.. 
   }
-  BankAccount* findAccount(std::string findAccountNumber){
+  BankAccount* findAccount(const std::string& findAccountNumber){
     for(BankAccount& account : accounts){
       if(account.getAccountNumber() == findAccountNumber){
         return &account;
