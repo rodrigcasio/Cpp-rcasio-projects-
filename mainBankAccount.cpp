@@ -39,18 +39,24 @@ st::cout <<"------- object1 from BankAccount class (results) ----------"<< std::
 
   //3rd method:
   if(sourceAccount && depositAccount){
-    std::cout << bank.transferAccount(*sourceAccount, *depositAccount, 500) <<std::endl;//arguments used for method transferAccount must be the dereference of the pointers.
-  }
+    bank1.transferAccount(*sourceAccount, *depositAccount, 500); //arguments used for method transferAccount must be the dereference of the pointers.
+    bank1.transferAccount(*sourceAccount, *depositAccount, 900); 
 
+    //switching the sender and the receiver examples (just for fun):
+    bank1.transferAccount(*depositAccount, *sourceAccount, 99);
+  }
+  
   //trying other transactions with result in a variable int status:
   if(sourceAccount && depositAccount){
-    int status = bank1.transferAccount(*sourceAccount, *depositAccount, 90000); // erro rexpected: not enough funds:
-    std::cout << status << std::endl;
+     bank1.transferAccount(*sourceAccount, *depositAccount, 90000); // error rexpected: not enough funds:
   }
   if(sourceAcccount && depositAccount){
     int status = bank1.transferAccount(*sourceAccount, *depositAccount, -2); //error expected: amount must be positive:
-    std::cout << status << std::endl;
   }
+
+  //using method of transactionHistory();
+  bank1.getTransactionInfo("1007");
+  bank1.getTransactionInfo("1008");
   
   return 0;
 }
