@@ -31,18 +31,21 @@ public:
     BankAccount* depositPtr = findAccount(depositAccount.getAccountNumber());
     if(sourcePtr != &sourceAccount || depositPtr != &depositAccount){ //check if pointers are pointing to the same object.
       std::cout <<"*Invalid transfer: accounts not found*" << std::endl;
-      std::cout <<"Status Code: ";
-      return statusCode = 2; 
+      statusCode = 2;
+      std::cout <<"Status Code: " << statusCode << std::endl;
+      return statusCode;
     }
     if(sourcePtr->getAccountNumber() == depositPtr->getAccountNumber()){ //prevents transfer to same accounts.
       std::cout <<"*Invalid transfer: cannot deposit from same account*"<< std::endl;
-      std::cout <<"Status code: ";
-      return statusCode = 2;
+      statusCode = 2;
+      std::cout <<"Status code: " << statusCode << std::endl;
+      return statusCode;
     }
     if(amount <= 0){ //1st amount condition
       std::cout<<"*Invalid transfer: amount should be a positive*"<< std::endl;
-      std::cout <<"Status Code: ";
-      return statusCode = 3;
+      statusCode = 3;
+      std::cout <<"Status Code: " << statusCode << std::endl;
+      return statusCode;
     }
     
     if(amount <= sourcePtr->getBalance()){ //2nd amount condition
@@ -50,25 +53,51 @@ public:
       BankAccount::Transaction sourceAcc(*sourcePtr); //dereference sourcePtr.
       if(!sourceAcc.setWithdraw(amount)){ //setWithdraw return bool. If condition true,  transaction is not done.
         std::cout <<"*Invalid Transfer: transaction could not be processed*" << std::endl;
-        std::cout <<"Status Code: ";
-        return statusCode = 3;
+        statusCode = 3;
+        std::cout <<"Status Code: " << statusCode << std::endl;
+        return statusCode;
       }
       
       BankAccount::Transaction depositAcc(*depositPtr); //initialize the constructor of Transacion class to dereference depositPtr.
       if(!depositAcc.setDeposit(amount)){
         std::cout <<"*Invalid transfer: transaction could not be processed*"<< std::endl;
-        std::cout <<"Status Code: ";
-        return statusCode = 3;
+        statusCode = 3;
+        std::cout <<"Status Code: "<< statusCode << std::endl;
+        return statusCode;
       }
+
+      std::stringstream ss;
+      ss << std::fixed << std::setprecision(2) << amount; //changing the decimals of a double turned into string.
+      //setting transaction information on 2 strings 
+      //record transactions:
+      std::string sourceTransactionInfo = "Account: #" + sourcePtr->getAccountNumber() + " (-$" + ss.str() + ")" + "------>" + "#" + depositPtr->getAccountNumber();
+      std::string depositTransactionInfo = "Account: #" + despositPtr->getAccountNumber() + " (+$" + ss.str() + ")" + "<------" + "#" + sourcePtr->getAccountNumber();
+
+      sourcePtr->setTransactionInfo(sourceTransactionInfo); //using the methods from BankAccount withh pointers
+      depositPtr->setTransactionInfo(depositTransactionInfo); //palacing the 2 strings into the method as arguments to store them into vector transactionList();
+      
       //good to go. 
       std::cout <<"Your transfer was processed successfully"<< std::endl;
-      std::cout <<"Status Code: ";
-      return statusCode = 1;
+      statusCode = 1;
+      std::cout <<"Status Code: " << statusCode << std::endl;
+      return statusCode;
     }
     std::cout <<"*Invalid transfer: insufficient funds"* << std::endl;
-    std::cout <<"Status Code: ";
-    return statusCode = 3;
+    statusCode = 3;
+    std::cout <<"Status Code: " << statusCode << std::endl;
+    return statusCode;
   }
+
+void transactionHistory(const std::string& accountNumber){
+  BankAccount* accountPtr = findAccount(accountNumber);
+  if(!accountPtr){
+    std::cout <<"*Invalid search: Account was not found*" << std::endl;
+    return;
+  }
+  std::cout <<"Transaction History of Account #" << accountNumber << std::endl;
+  std::cout << accountPtr->getTransactionInfo();
+  std::cout <<"\t-Current total: "<< accountPtr->getBalance() << "-" << std::endl << std::endl;
+}
 };
 
 #endif
