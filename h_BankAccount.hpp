@@ -8,6 +8,7 @@
 class BankAccount{
   std::string accountNumber;
   double balance;
+  std::vector <std::string> transactionList;
 
 public:
   class Transaction{
@@ -22,9 +23,11 @@ public:
   //getter methods:
   string getAccountNumber();
   double getBalance();
+  std::string getTransactionInfo();
   //setter methods:
   void setAccountNumber(std::string new_account_number);
   void setBalance(double new_balance);
+  void setTransactionInfo(const std::string& transactionInfo);
   
   
 };
