@@ -97,7 +97,23 @@ void transactionHistory(const std::string& accountNumber){
   std::cout <<"Transaction History of Account #" << accountNumber << std::endl;
   std::cout << accountPtr->getTransactionInfo();
   std::cout <<"\t-Current total: "<< accountPtr->getBalance() << "-" << std::endl << std::endl;
-}
+  }
+
+  void applyInterestToAllSavings(){
+    bool applied = false;
+    for(BankAccount& account : accounts){
+      if(account.isSavingsAccount()){
+        BankAccount::Transaction transaction(account);
+        if(transaction.applyInterest()){
+          applied = true;
+        }
+      }
+    }
+    if(!applied){
+      std::cout << "*No savings accounts with applicable interest*" << std::endl << std::endl;
+    }
+  }
+
 };
 
 #endif
