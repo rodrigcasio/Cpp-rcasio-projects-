@@ -57,6 +57,30 @@ st::cout <<"------- object1 from BankAccount class (results) ----------"<< std::
   //using method of transactionHistory();
   bank1.getTransactionInfo("1007");
   bank1.getTransactionInfo("1008");
+
+  st::cout <<"------- Interests test result:----------"<< std::endl;
+
+  bank3.createAccount("1010", 600, 0.02, true);
+  bank3.createAccount("1011", 8000, 0.0, false);
+  bank3.createAccount("1012", 7777, 0.09, true);
+
+  BankAccount& accountPtr1 = bank3.findAccount("1010");
+  BankAccount& accountPtr2 = bank3.findAccount("1011");
+  BankAccount& accountPtr3 = bank3.findAccount("1012");
+
+  if(accountPtr1 && accountPtr2 && accountPtr3){
+    bank3.transferAccount(*accountPtr1, *accountPtr2, 200);
+    bank3.transferAccount(*accountPtr1, *accountPtr2, 20);
+    bank3.transferAccount(*accountPtr2, *accountPtr3, 2000);
+    bank3.transferAccount(*accountPtr2, *accountPtr1, 10);
+  
+  }
+
+  bank3.applyToAllSavings();
+
+  bank3.transactionHistory("1010");
+  bank3.transactionHistory("1011");
+  bank3.transactionHistory("1012");
   
   return 0;
 }
