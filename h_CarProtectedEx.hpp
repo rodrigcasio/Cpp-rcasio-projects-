@@ -1,3 +1,5 @@
+#ifndef CAR_PROTECTED_EX_HPP
+#define CAR_PROTECTED_EX_HPP
 
 class Car : public Vehicle{
   public:
@@ -8,3 +10,5 @@ class Car : public Vehicle{
 
     void displayCarInfo(); 
 };
+
+#endif
