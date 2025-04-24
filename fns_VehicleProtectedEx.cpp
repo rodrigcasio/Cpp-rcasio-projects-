@@ -1,3 +1,4 @@
+#include "h_VehicleProtectedEx.hpp"
 
 //setter method 
 void Vehicle::setVehicleType(std::string vehicleType){
