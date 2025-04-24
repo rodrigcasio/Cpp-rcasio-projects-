@@ -1,3 +1,5 @@
+#ifndef VEHICLE_PROTECTED_EX_HPP
+#define VEHICLE_PROTECTED_EX_HPP
 
 class Vehicle {
   public:
@@ -12,3 +14,5 @@ class Vehicle {
     std::string model;
 
 };
+
+#endif 
