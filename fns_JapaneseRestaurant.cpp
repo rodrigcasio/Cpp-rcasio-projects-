@@ -11,5 +11,7 @@ void JapaneseRestaurant::describeCuisine(){
 	if(getTatamiAvailable()){
 		std::cout <<"Traditional Japanese cuisine tatami seating available" << std::endl << std::endl;
 	}
-	std::cout << "Traditional Japanese cuisine" << std::endl << std::endl;
+	else{
+		std::cout << "Traditional Japanese cuisine" << std::endl << std::endl;
+	}
 }
