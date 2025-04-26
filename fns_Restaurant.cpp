@@ -17,7 +17,7 @@ void Restaurant::displayInfo(){
 void Restaurant::describeCuisine(){
 	std::cout <<"This restaurant serves various types of cuisines." << std::endl;
 }
-void Restaurant::addMenuItem(MenuItem& item){
+void Restaurant::addMenuItem(const MenuItem& item){
 	menu.push_back(item); // stores the items inside the vector menu.
 }
 void Restaurant::displayMenu(){
