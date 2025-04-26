@@ -8,8 +8,8 @@ bool JapaneseRestaurant::getTatamiAvailable(){
 	return hasTatami;
 }
 void JapaneseRestaurant::describeCuisine(){
-	if(!getTatamiAvailable()){
-		std::cout << "Traditional Japanese cuisine" << std::endl << std::endl;
+	if(getTatamiAvailable()){
+		std::cout <<"Traditional Japanese cuisine tatami seating available" << std::endl << std::endl;
 	}
-	std::cout <<"Traditional Japanese cuisine tatami seating available" << std::endl << std::endl;
+	std::cout << "Traditional Japanese cuisine" << std::endl << std::endl;
 }
