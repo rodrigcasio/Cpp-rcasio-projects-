@@ -18,7 +18,7 @@ public:
 
 	void displayInfo();
 	void describeCuisine();
-	void addMenuItem(MenuItem& item);
+	void addMenuItem(const MenuItem& item);
 	void displayMenu();
 
 protected:
