@@ -2,7 +2,7 @@
 #include <iostream>
 
 Desktop::Desktop(std::string cName, double cSpeed, int cRam)
-                : Computer(cName, cSpeed, cRam);
+                : Computer(cName, cSpeed, cRam){}
 
 void Desktop::addRam(int extraRam){
   ram += extraRam;
