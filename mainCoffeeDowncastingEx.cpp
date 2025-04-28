@@ -28,6 +28,21 @@ int main(){
 */
 
 //explanation:
+
+/*
+for(int i = 0; i < coffeeCups.size(); i++) {
+    Coffee* cup = coffeeCups[i]; // Get pointer to i-th coffee
+    SpecialBlend* specialCup = dynamic_cast<SpecialBlend*>(cup); // Try to downcast
+    if(specialCup != nullptr) { // If it’s a SpecialBlend
+        std::cout << "Coffee " << i << " is a special blend from " << specialCup->getLocation() << std::endl;
+    } else { // If it’s Espresso or ColdBrew
+        std::cout << "Coffee " << i << " is not a special blend!" << std::endl;
+    }
+}
+*/
+
+
+
 /*
 cup holds the address of the i-th coffee object in the vector. For example:
 
