@@ -26,3 +26,16 @@ int main(){
   fns_SpecialBlendDowncastingEx.cpp -o coffee
   ./coffee
 */
+
+//explanation:
+/*
+//the line std::vector<Coffee*> coffeeCups = createCoffeeCups(); coffeeCups now contains the list of Coffee* pointers (poiting to Espresso SpecialBlend and ColdBrew objects)
+
+// Coffee* cup = coffeeCups[];
+
+// declare cup = creates a pointers variable called cup of type Coffee*. This means cup
+// can hold the address of a Coffee object ()or any derived class like Espresso, SpecialBlend or ColdBrew.
+
+//Assigns coffee[i] to cup = takes Coffee* pointer stored in coffeeCups[i] and copies it into cup. Now, cup points in the same coffee object as coffeeCups[i].
+
+*/
