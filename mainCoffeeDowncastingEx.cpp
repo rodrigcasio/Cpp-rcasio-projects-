@@ -29,6 +29,19 @@ int main(){
 
 //explanation:
 /*
+cup holds the address of the i-th coffee object in the vector. For example:
+
+    If i = 0, coffeeCups[0] is a Coffee* pointing to an Espresso(10, 5, true). After cup = coffeeCups[0], cup points to that same Espresso object.
+    If i = 1, coffeeCups[1] points to a SpecialBlend(13, 9, "Ethiopia"), and cup gets that address.
+
+Each iteration of the loop updates cup to point to the next coffee object in coffeeCups.
+*/
+
+
+
+
+
+/*
 //the line std::vector<Coffee*> coffeeCups = createCoffeeCups(); coffeeCups now contains the list of Coffee* pointers (poiting to Espresso SpecialBlend and ColdBrew objects)
 
 // Coffee* cup = coffeeCups[];
