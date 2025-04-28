@@ -35,6 +35,9 @@ cup holds the address of the i-th coffee object in the vector. For example:
     If i = 1, coffeeCups[1] points to a SpecialBlend(13, 9, "Ethiopia"), and cup gets that address.
 
 Each iteration of the loop updates cup to point to the next coffee object in coffeeCups.
+
+cup is just a temporary pointer variable that holds a copy of the Coffee* from coffeeCups[i].
+It doesn’t create a new object or copy the coffee object—it just points to the same object in memory that coffeeCups[i] points to.
 */
 
 
