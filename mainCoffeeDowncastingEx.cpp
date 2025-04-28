@@ -39,6 +39,21 @@ for(int i = 0; i < coffeeCups.size(); i++) {
         std::cout << "Coffee " << i << " is not a special blend!" << std::endl;
     }
 }
+
+
+Step by step explanation of the for loop:
+
+    Coffee* cup = coffeeCups[i]: cup gets the Coffee* pointer from coffeeCups[i], pointing to the i-th coffee object (e.g., an Espresso or SpecialBlend).
+    SpecialBlend* specialCup = dynamic_cast<SpecialBlend*>(cup): Uses dynamic_cast to check if cup points to a SpecialBlend. If it does, specialCup is a valid SpecialBlend* pointer; if not, specialCup is nullptr.
+    The if checks specialCup != nullptr to decide what to print, accessing getLocation() only for SpecialBlend objects.
+
+Why cup Helps: It’s a clear, named variable for the current coffee, making the dynamic_cast and subsequent checks easier to read and work with.
+
+
+
+*/
+
+
 */
 
 
