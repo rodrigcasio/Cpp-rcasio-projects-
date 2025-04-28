@@ -14,6 +14,8 @@ int main(){
       std::cout << "Coffee " << i << " is not a special blend!" << std::endl;
     }
   }
+
+  delete cup;
   
   return 0;
 }
