@@ -11,6 +11,8 @@ class Juice{
     std::string getJuiceType();
     int getJuiceSize();
 
+    virtual ~Juice();
+
   protected:
     std::string type;
     int size;
