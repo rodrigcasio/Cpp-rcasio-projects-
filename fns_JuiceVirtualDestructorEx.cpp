@@ -15,3 +15,7 @@ std::string Juice::getJuiceType(){
 int Juice::getJuiceSize(){
   return size;
 }
+
+Juice::~Juice(){
+  std::cout << "Juice is done, recycling bottle" << std::endl;
+}
