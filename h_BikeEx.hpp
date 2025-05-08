@@ -7,9 +7,9 @@ class Bike{
     std::string getBikeName();
     void setBikeSpeed(double bSpeed);
     double getBikeSpeed();
-    void setBikeCadence(int bCadence);
+    void changeBikeCadence(int newCadence);
     int getBikeCadence();
-    void setBikePace(int Pace);
+    void changeBikePace(int newPace);
     int getBikePace();
     void displayBikeInfo();
 
