@@ -17,19 +17,23 @@ void setBikeSpeed(double bSpeed){
 double getBikeSpeee(){
     return speed;
 }
-void setBikeCadence(int bCadence){
-    cadence = bCadence;
+void changeBikeCadence(int newCadence){
+    cadence = newCadence;
+    std::cout << getBikeName() "'s cadence is now " << getBikeCadence() << "rpm" << std::endl << std::endl;
 }
 int getBikeCadence(){
     return cadence;
 }
-void setBikePace(int bPace){
-    pace = bPace;
+void changeBikeCadence(int newPace){
+    pace = newPace;
+    std::cout << getBikeName() << "'s pace is now " << getBikePace() < std::endl << std::endl;
 }
 int getBikePace(){
     return pace;
 }
 void displayBikeInfo(){
-  std::string << getBikeName() << " is going at " << getBikeSpeed() << " km/h" << std:endl 
-              << " with a cadence of " << getBikeCadence() <<  " rpm and a pace of " << getBikePace() << std::endl;  
+    std::cout << "Bike's name: " << getBikeName() << std::endl
+              << "Speed: " << getBikeSpeed() << std::endl
+              << "Cadence: " << getBikeCadence() << std::endl
+              << "Pace: " << getBikePace() << std::endl << std::endl;
 }
