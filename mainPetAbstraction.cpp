@@ -54,3 +54,14 @@ int main(){
 
 //HOW TO RUN
 // g++ mainPetAbstraction.cpp fns_PetAbstraction.cpp fns_DogAbstraction.cpp fns_CatAbstraction.cpp fns_MagicPetAbstraction.cpp fns_DogAbstraction.cpp fns_CatAbstraction.cpp fns_MagicPetAbstraction.cpp
+
+/*
+  last loop approach:
+  Key points:
+    This approach works for any number of heap-allocated MagicPet objects.
+    Only delete pointers created with new.
+    Never delete stack-allocated pointers.
+
+  This way, you can use all your MagicPet objects in the first loop, and safely delete
+  them at the end 
+*/
