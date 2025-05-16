@@ -31,7 +31,7 @@ void Library::borrowBook(std::string bookTitle){
   }
 }
 
-void Library::bookList() const{
+void Library::listBooks() const{
   if(!bookList.empty()){
     for(const std::string& book : bookList){
       std::cout << "- " << book << std::endl << std::endl;
