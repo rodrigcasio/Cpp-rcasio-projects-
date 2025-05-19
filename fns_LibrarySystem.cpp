@@ -2,27 +2,44 @@
 #include <iostream>
 #include <string>
 
-Library::Library(){
+int Library::totalBorrowedBooks = 0;
+
+Library::Library(): reservedCount(0){
   
 }
+int Library::getTotalBorrowedBooks(){
+  return totalBorrowedBooks;
+}
+void Library::getTotalBorrowedBooks2(){
+  std::cout << "The total number of borrowed books is: " getTotalBorrowedBooks() << std::endl << std::endl;
+}
+int Library::getReservedCount() const{
+  return reservedCount;
+}
 
-void Library::addBook(std::string newBook){
+void Library::addBook(std::string newBook, double bookCost){
   if(bookList.size() < 100){
     bookList.push_back(newBook);
-    std::cout << newBook << " has been added successfully!" << std::endl << std::endl;
+    libraryBudget -= bookCost;    // deduct the cost of adding a book from the library budget.
+    std::cout << newBook << "- has been added successfully!" << std::endl << std::endl;
   }else{
     std::cout << "Library is full!" << std::end << std::endl;
   }
 }
 
-void Library::borrowBook(std::string bookTitle){
+bool Library::borrowBook(std::string bookTitle){
   if(bookList.empty()){
     std::cout << "There are no books available" << std::endl << std::endl;
   }else{
     for(auto it = bookList.begin(); it != bookList.end(); ++it){
       if(*it == bookTitle){
         bookList.erase(it);
-        std::cout << "Book borrowed!" << std::endl << std::endl;
+        std::cout << bookTitle <<" has been borrowed successfully!" << std::endl << std::endl;
+      auto it2 = find(reservedBooks.begin(), reservedBooks.end(), bookTitle);
+      if(it2 != reservedBooks.end()){
+        reservedBooks.erase(it2);
+      }
+        totalBorrowedBooks++;
         return true;
       }
     }
@@ -38,6 +55,27 @@ void Library::listBooks() const{
     }
   }else{
     std::cout << "There are no book available" << std::endl << std::endl;
+  }
+}
+
+void Library::reserveBook(std::string title) const{
+  if(!bookList.empty()){
+    auto it = find(bookList.begin(), bookList.end(), title);
+    if(it != bookList.end()){  //if book was found in the bookList vector:
+      auto it2 = find(reservedBooks.begin(), reservedBooks.end(), title);
+      if(it2 != reservedBooks.end()){ //if title is found in reservedBooks vector:
+        std::cout << "Book cannot be reserved!, book already reserved" << std::endl << std::endl;
+      }else{
+        reservedBooks.push_back(title); //adding book to vector
+        reservedCount++;
+        std::cout << "Book reserved: " << title << std::endl
+                  << "Reserved book count: " << getReservedCount() << std::endl << std::endl;
+      }
+    }else{ //if book was not found in the bookList vector:
+      std::cout << "Book cannot be reserved!, book is not available in the library" << std::endl << std::endl;
+    }
+  }else{
+    std::cout << "There are no books available in the library" << std::endl << std::endl;
   }
 }
 
