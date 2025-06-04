@@ -17,7 +17,7 @@ class Child {
     ~Child(){ std::cout << "Child destroyed" << std:endl; }
 
     void greet_parent(){
-      if(auto parent = parent_ref.lock()){
+      if(auto parent = parent_ref.lock()){            //Q: What can we write instead of "auto"? std::shared_ptr<Parent> parent?
         std::cout << "Hello, Parent is here!" << std::endl;
       }else{
         std::cout << "Parent is gone." << std::endl;
