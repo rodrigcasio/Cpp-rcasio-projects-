@@ -17,7 +17,6 @@ class Child {
     ~Child(){ std::cout << "Child destroyed" << std:endl; }
 
     void greet_parent(){
-      std::shared_ptr<Parent> parent;
       if(auto parent = parent_ref.lock()){
         std::cout << "Hello, Parent is here!" << std::endl;
       }else{
