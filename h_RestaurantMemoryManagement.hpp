@@ -13,12 +13,14 @@ class Restaurant {
     std::vector<std::shared_ptr<Customer>> activeCustomers;    // 3. represents the customers in the restaurant.
     std::vector<std::weak_ptr<Customer>> waitList;        // 4. if reservation is not available, customers added to waitList.
     int tableCount;
+    void notifyWaitlist(); // 23. 
 
   public:
     Restaurant(int initialTableCount);        // 5. Constructor (taking number of tables)
     bool reserveTable(const std::shared_ptr<Customer>& customer); // 8.
     void printWaitlist() const;  // 12.
-    void releaseTable(int tableNumber); //
+    void releaseTable(int tableNumber); // 18.
+    
 };
 
 #endif 
