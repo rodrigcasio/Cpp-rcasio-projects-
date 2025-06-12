@@ -16,7 +16,9 @@ class Restaurant {
 
   public:
     Restaurant(int initialTableCount);        // 5. Constructor (taking number of tables)
-    bool reserveTable(const std::shared_ptr<Customer>& customer);
+    bool reserveTable(const std::shared_ptr<Customer>& customer); // 8.
+    void printWaitlist() const;  // 12.
+    void releaseTable(int tableNumber); //
 };
 
 #endif 
