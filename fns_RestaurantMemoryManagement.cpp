@@ -23,3 +23,16 @@ bool Restaurant::reserveTable(const std::shared_ptr<Customer>& customer){  // 8.
   std::cout << "No tables are available at the moment, customer moved to wait-list." << std::endl;
   return false;                  // returnning false if reservation was not possible at the moment.
 }
+
+void Restaurant::printWaitlist() const{  // 12.
+  if(waitList.empty()){
+    std::cout << "There are no customers on the waiting-list" << std::endl;
+  }else{
+    std::cout << "The following are the poeple waiting for the table" << std::endl; // 13.
+    for(const std::weak_ptr<Customer>& customer : waitList){  // 14.
+      if(auto customerPtr = customer.lock()){  // 15, 16. Instead of "auto", could use "std::shared_ptr<Customer> customerPtr"
+        std::cout << "- " << customerPtr->getCustomerName() << std::endl;
+      }
+    }
+  }
+}
