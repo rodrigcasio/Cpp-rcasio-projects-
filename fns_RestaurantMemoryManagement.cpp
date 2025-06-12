@@ -30,9 +30,36 @@ void Restaurant::printWaitlist() const{  // 12.
   }else{
     std::cout << "The following are the poeple waiting for the table" << std::endl; // 13.
     for(const std::weak_ptr<Customer>& customer : waitList){  // 14.
-      if(auto customerPtr = customer.lock()){  // 15, 16. Instead of "auto", could use "std::shared_ptr<Customer> customerPtr"
-        std::cout << "- " << customerPtr->getCustomerName() << std::endl;
-      }
+      if(auto customerPtr = customer.lock()) // 15, 16. Instead of "auto", could use "std::shared_ptr<Customer> customerPtr"
+      std::cout << "- " << customerPtr->getCustomerName() << std::endl;
     }
   }
 }
+
+void Restaurant::releaseTable(int tableNumber){ // 18. 
+  for(const std::unique_ptr<Table>& table : tables){  // 19.
+    if(table->getNumber() = tableNumber){  // 20.
+      if(!table->getIsAvailable()) table->release(); // 21, 22. If table is reserved, release it.
+
+      //waitList will be updated when table is released.
+      notifyWaitlist() // 30.
+    }
+  }
+}
+
+void Restaurant::notifyWaitlist(){ // 24.
+  if(!waitList.empty()){  
+    auto customer = waitList.front().lock(); // 25, 26.
+    if(customer)  // 27
+      reserveTable(customer);  // 28.
+      removeElement(waitList, waitList.front()); // 29. removing element from waitList vector.
+      std::cout << "Customer removed from the waiting-list and reserved a table successfully" << std::endl;
+  }else{
+    std::cout << "There are no customers on the waiting-list" << std::endl;
+    return;
+  }
+}
+
+
+
+
