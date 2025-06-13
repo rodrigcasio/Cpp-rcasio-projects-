@@ -37,13 +37,19 @@ void Restaurant::printWaitlist() const{  // 12.
 }
 
 void Restaurant::releaseTable(int tableNumber){ // 18. 
-  for(const std::unique_ptr<Table>& table : tables){  // 19.
+  bool found = false;
+  for(const std::unique_ptr<Table> table : tables){  // 19.
     if(table->getNumber() = tableNumber){  // 20.
-      if(!table->getIsAvailable()) table->release(); // 21, 22. If table is reserved, release it.
-
-      //waitList will be updated when table is released.
-      notifyWaitlist() // 30.
+      found = true;
+      if(!table->getIsAvailable()) table->release();  // 21, 22. Found and reserved, we release table.
+      
+      // waitList will be updated 
+      notifyWaitlist(); // 30.
+      break;
     }
+  }
+  if(!found){
+    std::cout << "There is no table with number: \"" << tableNumber << "\"" << std::endl;
   }
 }
 
@@ -56,9 +62,46 @@ void Restaurant::notifyWaitlist(){ // 24.
       std::cout << "Customer removed from the waiting-list and reserved a table successfully" << std::endl;
   }else{
     std::cout << "There are no customers on the waiting-list" << std::endl;
-    return;
   }
 }
+
+/*  // Two approaches to create notifyWaitlist() method:
+
+==== 1. First approach of creating notifyWaitlist(), looping through the waitList vector and
+        and stopping it at the first customer found on the waitList.
+
+void Restaurant::notifyWaitlist(){
+  if(waitList.empty()){
+    std::cout << "There are no customers on the waiting-list" << std::endl;
+    return;
+  }
+  for(const std::weak_ptr<Customer>& customerWaiting : waitList){
+    if(auto customer = customerWaiting.lock()){
+      if(customer)
+        reserveTable(customer);
+        removeElement(waitList, customerWaiting);
+      std::cout << "Customer removed from the waiting-list and reserved a table successfully." << std::endl;
+    }
+    return;    / ensures only the first customer is processed and the fucntion exits immediately after.
+  }
+}
+
+==== 2. Cleaner approach to reserve table for the FIRST customer on the waitList vector
+        and then removin git from the waitList.
+
+void Restaurant::notifyWaitlist(){
+  if(!waitList.empty()){
+    auto customer = waitList.front().lock(); 
+    if(customer)
+      reserveTable(customer);
+      removeElement(cutomer, waitList.front());
+    std::cout << "Customer removed from waiting-list and reserved a table successfully" << std::endl;
+  }else{
+    std::cout << "There are no customers on the waiting-list" << std::endl;
+  }
+}
+
+*/
 
 
 
