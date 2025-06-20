@@ -1,0 +1,134 @@
+
+
+The Features of a Restaurant
+
+    1.
+
+    Welcome to the restaurant reservation system! Before we begin, we’ve defined two classes to represent a few restaurant features: the Customer class and the Table class. Check them out.
+
+Creating the Restaurant Class
+
+2.
+
+We’ll start by creating the heart of our system — the Restaurant class. This class will manage tables, customers, and a waitlist, ensuring an efficient reservation process.
+
+In the Restaurant class, start by defining a collection that ensures exclusive ownership of Table instances, as tables cannot be shared between customers. Use a vector of unique_ptrs for this purpose.
+3.
+
+Many components in a restaurant need a customer’s information. For example, the kitchen needs to prepare the meal for the customer, and a payment system is needed so the customer can pay for their meal.
+
+Let’s represent the customers in the restaurant. To do this, create a vector of shared pointers to represent active customers called activeCustomers.
+4.
+
+When attempting to go to a restaurant, customers must reserve a table. If a reservation is not available, customers will be added to a waitlist and contacted when a table becomes available.
+
+Let’s represent a waitlist. To do this, define a vector of the appropriate kind of pointers called waitlist. In our restaurant system, a customer instance is owned by the activeCustomers vector. However, our waitlist also needs a reference to a customer instance.
+5.
+
+Add a constructor that takes the number of tables as a parameter called initialTableCount.
+6.
+
+In the Restaurant.cpp file, define the constructor to do the following:
+
+    Loop from 1 to initialTableCount.
+    For each iteration, create a table.
+    Add each table to the tables vector.
+
+Reserving a Table
+
+7.
+
+In the Restaurant.hpp file, declare a function called reserveTable() that takes a shared_ptr& to a Customer and returns a Boolean value.
+
+    Note: A shared pointer can only be passed on by reference!
+
+8.
+
+Let’s start implementing the reserveTable() function. In Restaurant.cpp, define the reserveTable() function and include a for loop that loops through the tables vector. You can leave the loop empty for now.
+9.
+
+For each table, dereference the unique_ptr to the table and check if it is available.
+10.
+
+If the table is available, reserve it and add the customer to the activeCustomers vector. Return true to indicate that the reservation went through.
+11.
+
+After all the tables have been checked in the loop, if no tables are available, add the customer to the waitlist. Return false to indicate that it wasn’t possible to make a reservation at this time.
+
+Printing the Waitlist
+
+12.
+
+Let’s create a function that prints the contents of the waitlist. Start by declaring a function in the Restaurant.hpp file called printWaitlist(). This function accepts no parameters and doesn’t return anything.
+13.
+
+In the Restaurant.cpp file, start defining the printWaitlist() function by printing out the following string:
+
+The following people are waiting for a table:
+
+Copy to Clipboard
+
+14.
+
+Add a loop that goes through each element of the waitlist vector. You can leave the loop empty for now.
+15.
+
+Add a shared pointer called customerPtr inside the loop.
+16.
+
+Assign the value of the current element in the vector to customerPtr.
+17.
+
+Print the name of the current customer that customerPtr points to.
+
+Releasing a Table
+
+18.
+
+Let’s now implement the scenario of releasing a table. Start by declaring a function called releaseTable() that accepts an integer parameter called tableNumber and returns nothing in Restaurant.hpp.
+19.
+
+In the Restaurant.cpp file, start defining the function releaseTable() by adding a loop that loops through the tables vector. You can leave it empty for now.
+20.
+
+We will release the table with the same table number as tableNumber if and only if it is already reserved.
+
+For each table in tables, check if the table number matches tableNumber.
+21.
+
+Check if the table is already reserved.
+22.
+
+If the current table in the for loop matches the tableNumber and is reserved, release the table. We will work on updating the waitlist in the next set of steps.
+
+Updating the Waitlist
+
+23.
+
+We will now implement a function called notifyWaitlist() to update the waitlist when a table becomes available. This function will reserve a table for the first customer on the waitlist (if there is one).
+
+In the Restaurant.hpp file, declare a function called notifyWaitlist() that accepts no parameters and does not return anything. This function will be used internally and should not be accessible outside the class.
+24.
+
+Let’s implement the notifyWaitlist() function. In the Restaurant.cpp file, define the notifyWaitlist() function. We will only reserve a table for a customer if there is one on the waitlist. In notifyWaitlist(), check if waitlist is empty. If waitlist is empty, the function should exit.
+25.
+
+Create a shared pointer to a Customer called customer.
+26.
+
+Assign the first customer on the waitlist to customer.
+27.
+
+Before proceeding, check if the first customer was successfully assigned to customer.
+28.
+
+If the customer variable was successfully assigned, reserve a table for customer.
+29.
+
+Since the customer now has a table, they should be removed from the waitlist.
+
+Remove the customer from the waitlist. We’ve written a function called removeElement(vector, element) you can use for this task.
+30.
+
+The waitlist will be updated when a table is released. To do this, call the notifyWaitlist() from the releaseTable() function.
+

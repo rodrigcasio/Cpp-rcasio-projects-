@@ -1,0 +1,16 @@
+#ifndef RESTAURANT_MEMORY_MANAGEMENT_HPP
+#define RESTAURNAT_MEMORY_MANAGEMENT_HPP
+#include <memory>
+#include <vector>
+#include "h_CustomerMemoryManagement.hpp"
+#include "h_TableMemoryManagement_hpp"
+
+class Restaurant {
+private:
+    std::unique_ptr<Table> tables;
+    std::shared_ptr<Customer> activeCustomers;
+public:
+
+};
+
+#endif

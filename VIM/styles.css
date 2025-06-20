@@ -1,0 +1,20 @@
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e0e0e0;
+    font-family:"Arial", sans-serif;
+}
+    
+#testMessage{
+    font-size: 24px;
+    color: #2e7d32;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#testMessage:hover{
+    color: #d32f2f;
+}
