@@ -1,0 +1,53 @@
+ 
+
+1. Show databases : show databases;
+
+2. Create a new data base: create database name_of_database;
+
+3. Open or use a database: use name_of_database;
+
+4. To create a table inside the database: create table table1 ( 
+	-> nameOfVariable typeof variable, (coma at the end)
+	-> ID int, 
+	-> name varchar(200),
+	->lastVariable int    (no coma)
+	->);
+
+5. To see variables added: describe table1;
+
+6. To add data into the table: 
+insert into table1 values ("variable1", 1, "Rodrigo", 7);
+
+7. To see the table with the data: select * from table1; (* means all)
+
+8. To see only one column of your table: select ID from table1;
+
+9. To se only data from a specific data that share the same value in the same column: 
+(examples)
+
+- select * from table1 where ID = "1" or ID = "2";
+- select * from table1 where ID > 0;
+- select alias from avengers where age < 30;
+- select * from avengers where not origin = "earth";
+- select alias from avengers where not origin = "earth";
+
+10. Delete a complete row on the table1: 
+- delete from table1 where ID = 2;
+
+11. Change the value of an specific data inside the table:
+- update table1 set name_column = NULL where ID = 1; 
+
+12. Show the table with values of one column int arranged ascendant:
+- select * from table1 order by asc;
+
+13. Show the table with values of one column int arranged descendant:
+- select * from table1 order by desc;
+
+14. To create a new column inside the table1:
+- alter table table1 add name_column typeOfVariables; 
+(example)
+- alter table avengers add beard boolean;
+
+15. To save a backup of your database(from terminal macOS, not inside the the MySQL prompt): 
+-	mysqldump -u root -p my_database_name > my_database_backup.sql
+- saves it on the curent path: path = pwd.

@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+
+
+int main(){
+    int x = 10, y = 25, z;
+    int o = 30, p = 40;
+    float r;
+
+
+
+
+}
