@@ -1,5 +1,5 @@
 #ifndef TABLE_MEMORY_MANAGAMENT_HPP
-#defien TABLE_MEMORY_MANAGAMENT_HPP
+#define TABLE_MEMORY_MANAGAMENT_HPP
 
 class Table{
   private:
