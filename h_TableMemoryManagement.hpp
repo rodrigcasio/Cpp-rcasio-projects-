@@ -7,7 +7,7 @@ class Table{
     bool isAvailable;
 
   public:
-    Table(int num);
+    explicit Table(int num);
     void reserve();
     void release();
     bool getIsAvailable() const;
