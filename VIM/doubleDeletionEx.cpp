@@ -6,6 +6,8 @@
 int main(){
     
     int* ptr1 = new int(49);
+
+    std::cout << "- Address of the integer (ptr1): " << ptr1 << std::endl;
     delete ptr1;
 
      //ptr1 = nullptr;
