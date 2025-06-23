@@ -1,4 +1,4 @@
-// example 3.
+// example 3 of a namespace called CodecademyMath with funtions.
 #include <iostream>
 #include <cmath>
 

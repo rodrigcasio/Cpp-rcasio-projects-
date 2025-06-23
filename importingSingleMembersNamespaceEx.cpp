@@ -1,6 +1,6 @@
 #include <iostream>
 #include "h_ImportingSingleMembersNamespaceEx.hpp"
-using CodecademyMath::pow;      // importing specific fucntions
+using CodecademyMath::pow;      // importing specific fucntions or specific members.
 using CodecademyMath::fibonacci;
 using CodecademyMath::isPrime;
 
