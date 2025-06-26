@@ -19,8 +19,17 @@ namespace Marketing { // 1.
                 return static_cast<int>(teamMembers.size()); // converting the .size() result into an integer with 'static_cast<int>'
             }
             void setTeamBudget(double newBudget){ teamBudget = newBudget; } // 7.1
-            double getTeamBudget(){ return teamBudget; } // 7.2
+            double getTeamBudget() const { return teamBudget; } // 7.2
     };
+
+    namespace Support { // 8.
+        void auditTeam(const Marketing::Team& team){    // 9.
+            std::cout << "Auditing Marketing Team: " << team.getTeamName() << std::endl
+                      << "Number of Members: " << team.getMemberCount() << std::endl
+                      << "Team Budget: " << team.getTeamBudget() << std::endl
+                      << "Audit complete" << std::endl;
+        }
+    }
 }
 
 
