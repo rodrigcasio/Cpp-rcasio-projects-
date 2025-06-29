@@ -14,7 +14,7 @@ namespace Marketing { // 1.
             Team(const std::string& name, const std::vector<std::string>& members, double budget): teamName(name), teamMembers(members), teamBudget(budget){} // 3.
 
             const std::string& getTeamName() const{ return teamName; } // 4.
-            void addMember(std::string newMember){ teamMembers.push_back(newMember); std::cout << "New member named " << newMember << " has been added to the team successfully." << std::endl; } // 5.
+            void addMember(std::string newMember){ teamMembers.push_back(newMember); std::cout << "New member named " << newMember << " has been added to the Marketing team successfully." << std::endl; } // 5.
             int getMemberCount() const{ // 6.
                 return static_cast<int>(teamMembers.size()); // converting the .size() result into an integer with 'static_cast<int>'
             }

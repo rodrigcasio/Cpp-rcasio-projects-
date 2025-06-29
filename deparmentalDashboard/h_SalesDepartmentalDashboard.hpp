@@ -14,7 +14,7 @@ namespace Sales { // 10.
             Team(const std::string& name, const std::vector<std::string>& members, const std::string& location): teamName(name), teamMembers(members), teamLocation(location){}
             const std::string& getTeamName() const{ return teamName; } // 13.
             const std::vector<std::string>& getTeamMembers() const { return teamMembers; } // 14.
-            void addTeamMember(std::string member){ teamMembers.push_back(member); std::cout << "New member named " << member << " has been added to the team successfully." << std::endl; } // 15.
+            void addTeamMember(std::string member){ teamMembers.push_back(member); std::cout << "New member named " << member << " has been added to the Sales team successfully." << std::endl; } // 15.
             const std::string& getTeamLocation() const{ return teamLocation; }  // 16. 
             void setTeamLocation(const std::string& newLocation){ teamLocation = newLocation; } // 16.1
             void printTeamDetails() const{  // 17.

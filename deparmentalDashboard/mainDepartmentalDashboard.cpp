@@ -20,5 +20,8 @@ int main(){
     salesTeam.addTeamMember("Pratik"); // 22. Adding members into the team
     salesTeam.addTeamMember("Emily");
     salesTeam.addTeamMember("Clive");
+
+    salesTeam.printTeamDetails();
+
     return 0;
 }
