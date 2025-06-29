@@ -31,7 +31,7 @@ namespace Sales { // 10.
                     if(i != teamMembers.size() - 1){ // addind a comma if the member is not the last one.
                         std::cout << ", ";
                     }else{  // if 'i' is the last element, we add a period after last element shown.
-                        std::cout << " ." << std::endl;
+                        std::cout << "." << std::endl;
                     }
                 }
             }
