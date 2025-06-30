@@ -54,13 +54,18 @@ std::cout << "---" << std::endl;
     std::vector<std::string> humanResourcesMembers;
     std::vector<std::string> communicationsMembers;
     
+std::cout << std::endl;
+std::cout << "\t-New Engineering Team--" << std::endl;
+
     Engineering::Team engineeringTeam("Stellar Corp-Engineering", engineeringMembers, 900000, "Guadalajara");
-    
+ 
+std::cout << "---" << std::endl;
+
     engineeringTeam.addMember("Rodrigo");
     engineeringTeam.addMember("Luis");
     engineeringTeam.addMember("Alberto");
 
-std::cout << "\t-New Engineering Team--" << std::endl;
+std::cout << "---" << std::endl;
 
     engineeringTeam.printTeamDetails(); 
     
@@ -76,8 +81,9 @@ std::cout << "---" << std::endl;
 
     engineeringTeam.printTeamDetails();
 
+std::cout << "---" << std::endl;
     // Creating new team:
-
+std::cout << std::endl;
 std::cout << "\t-New HR Team--" << std::endl;
 
     HumanResources::Team hRteam("Stellar Corp-HR", humanResourcesMembers, "New Mexico", 50000);
@@ -108,9 +114,14 @@ std::cout << "---" << std::endl;
 
     hRteam.printTeamDetails();
 
+std::cout << "---" << std::endl;
+
+std::cout << std::endl;
 std::cout << "\t-New Communications Team--" << std::endl;
 
     Communications::Team communicationsTeam("Stellar Corp-Communications", communicationsMembers, "Chicago", 60000);
+
+std::cout << "---" << std::endl;
 
     communicationsTeam.addMember("Paul");
     communicationsTeam.addMember("Stephen");
