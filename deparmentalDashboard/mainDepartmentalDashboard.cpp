@@ -1,6 +1,8 @@
 #include <iostream>
 #include "h_MarketingDepartmentalDashboard.hpp"
 #include "h_SalesDepartmentalDashboard.hpp"
+#include "h_EngineeringDepartmentalDashboard.hpp"
+#include "h_HRDepartmentalDashboard.hpp"
 
 int main(){
 
