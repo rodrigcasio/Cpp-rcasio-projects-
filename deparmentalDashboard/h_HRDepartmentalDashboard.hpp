@@ -21,12 +21,12 @@ namespace HumanResources{
         int getMemberCount() const { return static_cast<int>(teamMembers.size()); }
 
         void addMember(const std::string& newMember){ teamMembers.push_back(newMember); std::cout << "New member named " << newMember << " has been added to the Human Resources team successfully" << std::endl;}
-        void setTeamLocation(const std::string& newLocation){ teamLocation = newLocation; }
-        void setNewBudget(double newBudget){ teamBudget = newBudget; }
+        void setTeamLocation(const std::string& newLocation){ teamLocation = newLocation; std::cout << getTeamName() << " has moved to " << newLocation << " as new team location." << std::endl; }
+        void setNewBudget(double newBudget){ teamBudget = newBudget; std::cout << "New team budget of " << newBudget << " has been added successfully" << std::endl; }
         void printTeamDetails() const{
             std::cout << "Human Resources Team Name: " << getTeamName() << std::endl
                       << "Location: " << getTeamLocation() << std::endl
-                      << "Budget: " <<getTeamBudget() << std::endl
+                      << "Budget: $" <<getTeamBudget() << std::endl
                       << "Members: ";
                 if(teamMembers.empty()){
                     std::cout << "There are no members in the team" << std::endl;
