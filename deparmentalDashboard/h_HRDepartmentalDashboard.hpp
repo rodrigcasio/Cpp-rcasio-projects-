@@ -35,9 +35,9 @@ namespace HumanResources{
                 for(size_t i = 0; i < teamMembers.size(); ++i){
                     std::cout << teamMembers[i];
                     if(i != teamMembers.size() - 1){
-                        std::cout << " ,";  // adding a comma if the member is not the last one
+                        std::cout << ", ";  // adding a comma if the member is not the last one
                     }else{
-                        std::cout << ".";   // adding a period if i (member) is the last one, (i == teamMembers.size() - 1). 
+                        std::cout << "." << std::endl;   // adding a period if i (member) is the last one, (i == teamMembers.size() - 1). 
                     }
                 }
         }      

@@ -34,7 +34,7 @@ namespace Sales { // 10.
                 for(size_t i = 0; i < teamMembers.size(); ++i){
                     std::cout << teamMembers[i];
                     if(i != teamMembers.size() - 1){ // addind a comma if the member is not the last one.
-                        std::cout << ", ";
+                        std::cout << " ,";
                     }else{  // if 'i' is the last element, we add a period after last element shown.
                         std::cout << "." << std::endl;
                     }

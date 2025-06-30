@@ -37,9 +37,9 @@ namespace Communications {
                     std::cout << teamMembers[i];    // output member
                     
                     if(i != teamMembers.size() - 1){
-                        std::cout << " ,";  // adding a comma if the i(member) is not the last member o the team vector.
+                        std::cout << ", ";  // adding a comma if the i(member) is not the last member o the team vector.
                     }else{
-                        std::cout << ".";   // adding a period if the i(member) is the last memeber of the team vector.
+                        std::cout << "." << std::endl;   // adding a period if the i(member) is the last memeber of the team vector.
                     }
                 }
 

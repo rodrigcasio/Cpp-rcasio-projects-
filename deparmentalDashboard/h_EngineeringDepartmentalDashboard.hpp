@@ -35,7 +35,7 @@ namespace Engineering {
                     std::cout << teamMembers[i];
                     
                     if(i != teamMembers.size() - 1){
-                        std::cout << " ,";     // adding a comma beside each member that is not the last one.
+                        std::cout << ", ";     // adding a comma beside each member that is not the last one.
                     }else{
                         std::cout << "." << std::endl;  // if it is the last one (i == teamMembers.size() - 1), output a period.
                     }
