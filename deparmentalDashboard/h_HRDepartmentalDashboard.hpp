@@ -22,7 +22,7 @@ namespace HumanResources{
 
         void addMember(const std::string& newMember){ teamMembers.push_back(newMember); std::cout << "New member named " << newMember << " has been added to the Human Resources team successfully" << std::endl;}
         void setTeamLocation(const std::string& newLocation){ teamLocation = newLocation; std::cout << getTeamName() << " has moved to " << newLocation << " as new team location." << std::endl; }
-        void setNewBudget(double newBudget){ teamBudget = newBudget; std::cout << "New team budget of " << newBudget << " has been added successfully" << std::endl; }
+        void setNewBudget(double newBudget){ teamBudget = newBudget; std::cout << "New team budget of $" << newBudget << " has been added successfully" << std::endl; }
         void printTeamDetails() const{
             std::cout << "Human Resources Team Name: " << getTeamName() << std::endl
                       << "Location: " << getTeamLocation() << std::endl

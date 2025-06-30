@@ -21,7 +21,7 @@ namespace Engineering {
 
         void addMember(const std::string& newMember){ teamMembers.push_back(newMember); std::cout << "New member named " << newMember << " has been added to the Enginnering department successfully" << std::endl; }  
         void setNewLocation(const std::string& newLocation){ teamLocation = newLocation; std::cout << getTeamName() << " has moved to " << newLocation << " as new team location." << std::endl; }
-        void setNewTeamBudget(double newBudget) { teamBudget = newBudget; std::cout << "New team budget of " << newBudget << " has been added successfully" << std::endl; }
+        void setNewTeamBudget(double newBudget) { teamBudget = newBudget; std::cout << "New team budget of $" << newBudget << " has been added successfully" << std::endl; }
         void printTeamDetails() const{
             std::cout << "Engineering Team Name: " << getTeamName() << std::endl
                       << "Location: " << getTeamLocation() << std::endl
