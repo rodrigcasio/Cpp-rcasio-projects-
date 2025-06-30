@@ -1,0 +1,42 @@
+#include <string>
+#include <vector>
+#include <iostream>
+
+namespace HumanResources{
+    
+    class Team{
+        private:
+        std::string teamName;
+        std::vector<std::string> teamMembers;
+        std::string teamLocation;
+        double teamBudget;
+
+        public:
+        Team(const std::string& name, const std::vector<std::string>& members, const std::string& location, double budget): teamName(name), teamMembers(members), teamLocation(location), teamBudget(budget) {}
+        
+        const std::string& getTeamName() const{ return teamName; }
+        const std::string& getTeamLocation() const{ return teamLocation; }
+        double getTeamBudget() const { return teamBudget; }
+        void addMember(const std::string& newMember){ teamMembers.push_back(newMember); std::cout << "New member named " << newMember << " has been added to the Human Resources team successfully" << std::endl;}
+        void setTeamLocation(const std::string& newLocation){ teamLocation = newLocation; }
+        void setNewBudget(double newBudget){ teamBudget = newBudget; }
+        void printTeamDetails() const{
+            std::cout << "Human Resources Team Name: " << getTeamName() << std::endl
+                      << "Location: " << getTeamLocation() << std::endl
+                      << "Budget: " <<getTeamBudget() << std::endl
+                      << "Members: ";
+                if(teamMembers.empty()){
+                    std::cout << "There are no members in the team" << std::endl;
+                    return;
+                }
+                for(size_t i = 0; i < teamMembers.size(); ++i){
+                    std::cout << teamMembers[i];
+                    if(i != teamMembers.size() - 1){
+                        std::cout << " ,";  // adding a comma if the member is not the last one
+                    }else{
+                        std::cout << ".";   // adding a period if i (member) is the last one, (i == teamMembers.size() - 1). 
+                    }
+                }
+        }      
+    };
+}
