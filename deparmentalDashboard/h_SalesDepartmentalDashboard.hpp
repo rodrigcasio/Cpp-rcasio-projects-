@@ -9,13 +9,18 @@ namespace Sales { // 10.
             std::string teamName;
             std::vector<std::string> teamMembers;
             std::string teamLocation;
+            double teamBudget;
         
         public: // 12.
-            Team(const std::string& name, const std::vector<std::string>& members, const std::string& location): teamName(name), teamMembers(members), teamLocation(location){}
+            Team(const std::string& name, const std::vector<std::string>& members, const std::string& location): teamName(name), teamMembers(members), teamLocation(location), teamBudget(4000){}
             const std::string& getTeamName() const{ return teamName; } // 13.
             const std::vector<std::string>& getTeamMembers() const { return teamMembers; } // 14.
-            void addTeamMember(std::string member){ teamMembers.push_back(member); std::cout << "New member named " << member << " has been added to the Sales team successfully." << std::endl; } // 15.
             const std::string& getTeamLocation() const{ return teamLocation; }  // 16. 
+            int getMemberCount() const { return static_cast<int>(teamMembers.size()); }
+            double getTeamBudget() const { return teamBudget; }
+            
+            void setTeamBudget(double newBudget){ teamBudget = newBudget; }
+            void addTeamMember(std::string member){ teamMembers.push_back(member); std::cout << "New member named " << member << " has been added to the Sales team successfully." << std::endl; } // 15.
             void setTeamLocation(const std::string& newLocation){ teamLocation = newLocation; } // 16.1
             void printTeamDetails() const{  // 17.
                 std::cout << "Sales Team Name: " << getTeamName() << std::endl
@@ -36,6 +41,17 @@ namespace Sales { // 10.
                 }
             }
     };
+
+    namespace Support {         // 28.3 (optional)
+        void auditTeam(const Sales::Team& team){
+            std::cout << "Auditing Sales Team " << team.getTeamName() << std::endl
+                      << "Number of Members: " << team.getMemberCount() << std::endl
+                      << "Team Budget: " << team.getTeamBudget() << std::endl
+                      << "Audit Complete" << std::endl;
+
+
+        }
+    }
 }
 
 
