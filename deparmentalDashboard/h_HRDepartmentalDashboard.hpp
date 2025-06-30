@@ -16,7 +16,10 @@ namespace HumanResources{
         
         const std::string& getTeamName() const{ return teamName; }
         const std::string& getTeamLocation() const{ return teamLocation; }
+        const std::vector<std::string>& getTeamMembers() const { return teamMembers; }
         double getTeamBudget() const { return teamBudget; }
+        int getMemberCount() const { return static_cast<int>(teamMembers.size()); }
+
         void addMember(const std::string& newMember){ teamMembers.push_back(newMember); std::cout << "New member named " << newMember << " has been added to the Human Resources team successfully" << std::endl;}
         void setTeamLocation(const std::string& newLocation){ teamLocation = newLocation; }
         void setNewBudget(double newBudget){ teamBudget = newBudget; }

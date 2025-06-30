@@ -15,10 +15,12 @@ namespace Engineering {
         
         const std::string& getTeamName() const { return teamName; }
         const std::string& getTeamLocation() const { return teamLocation; }
-        void addMember(const std::string& newMember){ teamMembers.push_back(newMember); std::cout << "New member named " << newMember << " has been added to the Enginnering department successfully" << std::endl; }  
-        int getMemberCount() const { return static_cast<int>(teamMembers.size()); }
-        void setNewTeamBudget(double newBudget) { teamBudget = newBudget; }
+        const std::vector<std::string>& getTeamMembers() const { return teamMembers;}
         double getTeamBudget() const { return teamBudget; }
+        int getMemberCount() const { return static_cast<int>(teamMembers.size()); }
+
+        void addMember(const std::string& newMember){ teamMembers.push_back(newMember); std::cout << "New member named " << newMember << " has been added to the Enginnering department successfully" << std::endl; }  
+        void setNewTeamBudget(double newBudget) { teamBudget = newBudget; }
         void printTeamDetails() const{
             std::cout << "Engineering Team Name: " << getTeamName() << std::endl
                       << "Location: " << getTeamLocation() << std::endl
