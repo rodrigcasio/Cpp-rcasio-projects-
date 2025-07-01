@@ -4,6 +4,7 @@
 
 // example of polymorphism 
 // class done for function communicateToDeparment()
+// Using a pure virtual base class so all department teams can inherit getTeamName()
 
 class DepartmentTeamBase {
     public:
