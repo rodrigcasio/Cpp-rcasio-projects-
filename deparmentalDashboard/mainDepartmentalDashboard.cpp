@@ -4,6 +4,7 @@
 #include "h_EngineeringDepartmentalDashboard.hpp"
 #include "h_HRDepartmentalDashboard.hpp"
 #include "h_CommunicationsDepartmentalDashboard.hpp"
+#include "h_DepartmentTeamBase.hpp"
 
 int main(){
 
@@ -142,6 +143,10 @@ std::cout << "---" << std::endl;
 std::cout << "---" << std::endl;
 
     communicationsTeam.printTeamDetails();
+
+std::cout << "---" << std::endl;
+
+    // communicateToDeparment("")   
 
     return 0;
 }

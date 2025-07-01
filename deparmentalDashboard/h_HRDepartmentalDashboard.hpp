@@ -1,10 +1,11 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "h_DepartmentTeamBase.hpp"
 
 namespace HumanResources{
     
-    class Team{
+    class Team : public DepartmentTeamBase {
         private:
         std::string teamName;
         std::vector<std::string> teamMembers;
@@ -14,7 +15,7 @@ namespace HumanResources{
         public:
         Team(const std::string& name, const std::vector<std::string>& members, const std::string& location, double budget): teamName(name), teamMembers(members), teamLocation(location), teamBudget(budget) {}
         
-        const std::string& getTeamName() const{ return teamName; }
+        const std::string& getTeamName() const override { return teamName; }
         const std::string& getTeamLocation() const{ return teamLocation; }
         const std::vector<std::string>& getTeamMembers() const { return teamMembers; }
         double getTeamBudget() const { return teamBudget; }
