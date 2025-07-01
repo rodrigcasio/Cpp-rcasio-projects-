@@ -6,16 +6,17 @@
 #include "h_CommunicationsDepartmentalDashboard.hpp"
 #include "h_DepartmentTeamBase.hpp"
 
-int main(){
 
-    namespace audit = Marketing::Support;   // 26.
-    
+namespace audit = Marketing::Support;   // 26.
+
+int main(){
+   
     std::vector<std::string> marketingMembers; // 18.
     std::vector<std::string> salesMembers;  // 18.1
 
     // creating an object from team class nested in Marketing namespace 
     // 19.  
-    Marketing::Team marketingTeam("Stellar Corp", marketingMembers, 500000);
+    Marketing::Team marketingTeam("Stellar Corp-Marketing", marketingMembers, 500000);
 
     marketingTeam.addMember("Scott");    // 20. Adding members into the team.
     marketingTeam.addMember("Nicole");
@@ -23,7 +24,7 @@ int main(){
 
 std::cout << "---" << std::endl;
 
-    Sales::Team salesTeam("Stellar Corp", salesMembers, "London"); // 21. Creating team   
+    Sales::Team salesTeam("Stellar Corp-Sales", salesMembers, "London"); // 21. Creating team   
 
     salesTeam.addTeamMember("Pratik"); // 22. Adding members into the team
     salesTeam.addTeamMember("Emily");
@@ -146,7 +147,20 @@ std::cout << "---" << std::endl;
 
 std::cout << "---" << std::endl;
 
-    // communicateToDeparment("")   
+std::cout << "---- Example of using the method communcatedToDepartment() --- " << std::endl;
+    // 28.3
+    Marketing::Support::communicateToDeparment(marketingTeam, engineeringTeam, "We need information about your upcomming project ASAP");
+    
+std::cout << "---" << std::endl;
+
+    Marketing::Support::communicateToDeparment(engineeringTeam, hRteam, "We need orientation for a new intern. Starting next week");
+
+std::cout << "---" << std::endl;
+
+    Marketing::Support::communicateToDeparment(communicationsTeam, salesTeam, "Need update of the current sales of the month, please.");
+
+std::cout << "---" << std::endl;
 
     return 0;
+
 }
