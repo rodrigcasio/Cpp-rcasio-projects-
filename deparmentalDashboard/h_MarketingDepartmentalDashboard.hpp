@@ -1,10 +1,12 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "h_DepartmentTeamBase.hpp"
+
 
 namespace Marketing { // 1.
     
-    class Team{ // 2.
+    class Team : public DepartmentTeamBase { // 2.
         private:
             std::string teamName;
             std::vector<std::string> teamMembers;
@@ -13,7 +15,7 @@ namespace Marketing { // 1.
         public:
             Team(const std::string& name, const std::vector<std::string>& members, double budget): teamName(name), teamMembers(members), teamBudget(budget){} // 3.
 
-            const std::string& getTeamName() const{ return teamName; } // 4.
+            const std::string& getTeamName() const override { return teamName; } // 4.
             void addMember(std::string newMember){ teamMembers.push_back(newMember); std::cout << "New member named " << newMember << " has been added to the Marketing team successfully." << std::endl; } // 5.
             int getMemberCount() const{ // 6.
                 return static_cast<int>(teamMembers.size()); // converting the .size() result into an integer with 'static_cast<int>'
@@ -28,6 +30,13 @@ namespace Marketing { // 1.
                       << "Number of Members: " << team.getMemberCount() << std::endl
                       << "Team Budget: " << team.getTeamBudget() << std::endl
                       << "Audit complete" << std::endl;
+        }
+
+        // 28.2 handle communication between deparments from the Marketing Support
+        void communicateToDeparment(const DepartmentTeamBase& sender, const DepartmentTeamBase& receiver, const std::string& message){
+            std::cout << "New message from: " << sender.getTeamName() << std::endl
+                      << "To: " << receiver.getTeamName() << std::endl
+                      << "Message: \"" << message << "\"" << std::endl;
         }
     }
 }
