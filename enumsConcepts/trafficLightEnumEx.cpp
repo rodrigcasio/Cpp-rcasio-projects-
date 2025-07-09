@@ -1,5 +1,6 @@
 #include <iostream>
 // This is an example if using the constants insdie if-else conditions 
+// We have to make sure that there are not constants with the same name as other enums located in different enum classes.
 enum TrafficLightColor {
     TRAFFIC_RED,
     TRAFFIC_YELLOW,
