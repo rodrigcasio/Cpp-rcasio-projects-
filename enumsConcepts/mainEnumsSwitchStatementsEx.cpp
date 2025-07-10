@@ -11,3 +11,6 @@ int main(){
 
     return 0;
 }
+
+// How to run : g++ mainEnumsSwitchStatementsEx.cpp fns_EnumsSwitchStatementsEx.cpp 
+            // % ./a.out 
