@@ -10,4 +10,4 @@ int main(){
     performAction(thiefTuti);
 
     return 0;
-}
+};
