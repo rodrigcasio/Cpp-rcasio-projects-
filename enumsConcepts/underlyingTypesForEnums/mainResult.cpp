@@ -1,6 +1,9 @@
 #include "h_Result.hpp"
 #include <iostream>
 
+// 1st example of Underlying types for enums
+// here in the header file we are assigning the value of the constants as bool in the declaration of the enum class
+
 int main(){
 
     // creating a variable of type Result
