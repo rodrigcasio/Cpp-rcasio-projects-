@@ -21,7 +21,7 @@ class Packet {
         const std::string getProtocolName() const;
         void validatePacket();
         bool isError();
-        void displayInfo();
+        void displayInfo() const;
 
         
     
