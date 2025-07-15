@@ -5,5 +5,5 @@ enum class Status{  // 3.
     PENDING,
     VALID,
     INVALID,
-    TIMEOUT,
+    TIMEOUT
 };

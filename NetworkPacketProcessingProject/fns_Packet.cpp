@@ -11,6 +11,8 @@ const std::string Packet::getPacketTypeName() const{
         case UNKNOWN: return "UNKNOWN"; break;  // 13.
         case DATA: return "DATA"; break;
         case CONTROL: return "CONTROL"; break;
+        case GROUP: return "GROUP"; break;
+        case RESOLUTION: return "RESOLUTION"; break;
         case ERROR: return "ERROR"; break;
         default: return "UNKNOWN";  // 14.
     }
@@ -35,6 +37,9 @@ const std::string Packet::getProtocolName() const{
     switch(protocol){   // 9. 
         case Protocol::TCP: return "TCP"; break;    // 10.
         case Protocol::UDP: return "UDP"; break;
+        case Protocol::IGMP: return "IGMP"; break;
+        case Protocol::ICMP: return "ICMP"; break;
+        case Protocol::ARP: return "ARP"; break;
         case Protocol::HTTP: return "HTTP"; break;
         case Protocol::FTP: return "FTP"; break;
         default: return "Unknown Protocol";     // 11.
@@ -58,6 +63,12 @@ void Packet::validatePacket(){  // 18.
                 packetStatus = Status::INVALID;
             }
             break;
+        case GROUP:
+            packetStatus = Status::VALID;
+            break;
+        case RESOLUTION:
+            packetStatus = Status::INVALID;
+            break;
         case ERROR: // 21.
             packetStatus = Status::VALID;
             break;
@@ -75,7 +86,7 @@ bool Packet::isError(){    // 24. determine if Packet is invalid for logging or 
     return false;  
 }
 
-void Packet::displayInfo() const{
+void Packet::displayInfo() const{   // 25.
     std::cout << "\t=== Packet ===" << std::endl
               << "Packet Type Name: " << getPacketTypeName() << std::endl
               << "Protocol Name: " << getProtocolName() << std::endl

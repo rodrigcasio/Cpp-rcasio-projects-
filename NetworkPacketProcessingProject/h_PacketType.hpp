@@ -6,5 +6,7 @@ enum PacketType{    // 1.
     UNKNOWN,
     DATA,
     CONTROL,
+    GROUP,
+    RESOLUTION,
     ERROR
 };

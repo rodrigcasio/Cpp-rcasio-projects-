@@ -3,6 +3,9 @@
 enum class Protocol{    // 2.
     TCP,
     UDP,
+    ICMP,   // new
+    IGMP,   // new
+    ARP,
     HTTP,
     FTP
 };
