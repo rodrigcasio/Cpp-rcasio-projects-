@@ -52,7 +52,9 @@ std::cout << "---" << std::endl;
 
     // 6th packet
     Packet resolutionPacket(PacketType::RESOLUTION, Protocol::ARP);
-    
+
+    resolutionPacket.displayInfo();
+    resolutionPacket.validatePacket();
     resolutionPacket.displayInfo();
    
     return 0;

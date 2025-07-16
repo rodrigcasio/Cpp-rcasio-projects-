@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 
-Packet::Packet(PacketType pType, Protocol ptrcl): type(pType), protocol(ptrcl){ // 8.
+Packet::Packet(PacketType pType, Protocol ptrcl): type(pType), protocol(ptrcl), packetStatus(Status::PENDING){ // 8.
 
 }
 
