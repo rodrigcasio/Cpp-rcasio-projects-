@@ -21,8 +21,11 @@ int main(){
     std::cout << "The maximum number is: " << result2 << std::endl;
   
     // 2.
-    bool result3 = areNumbersEqual(4, 3.8);
+    bool result3 = areNumbersEqual(4, 3.8); 
+    bool result4 = areNumbersEqual<int, double>(3, 92.23);
 
+    std::cout << "Is is 3.2 equal to 7.9?: " << result3 << std::endl;
+    std::cout << "Is 3 equal to 92.23?: " << result4 << std::endl;
 
     return 0;
 }
