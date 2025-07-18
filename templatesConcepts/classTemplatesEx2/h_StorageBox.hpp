@@ -4,10 +4,10 @@
 template<typename T>
 class StorageBox {
     private:
-    T storedValue;
+        T storedValue;
 
     public:
-    StorageBox(T inputValue): storedValue(inputValue){}
+        StorageBox(T inputValue): storedValue(inputValue){}
 
-    T getStoredValue() const { return storedValue; }
+        T getStoredValue() const { return storedValue; }
 };
