@@ -3,7 +3,7 @@
 
 int main(){
 
-    KeyValuePair key1(1001, "Bathroom Key");
+    KeyValuePair<int, std::string> key1(1001, "Bathroom Key");
 
     int keyNumber = key1.getKey();
     std::string keyValue = key1.getValue();

@@ -2,7 +2,7 @@
 
 int main(){
 
-    Pair myPair(4, "hello");
+    Pair<int, std::string> myPair(4, "hello");
     
     myPair.displayPair();
 

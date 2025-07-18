@@ -2,7 +2,7 @@
 
 int main(){
 
-    StorageBox box1("Apples");
+    StorageBox<std::string> box1("Apples");
 
     std::cout << "Stored value: " << box1.getStoredValue() << std::endl;
 
