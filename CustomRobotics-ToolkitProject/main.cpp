@@ -1,7 +1,34 @@
 #include <iostream>
 #include "h_Functions.hpp"
 #include "h_DataHolder.hpp"
-// Custom Toolkit for robotics lab 
+
+// Custom Toolkit for robotics lab using C++ templates
+
+void runToolKitDemo(){
+    std::cout << "\t=== ToolKit Demo ===" << std::endl;
+    int result = midPoint(1000, 3000);  // 25.
+    std::cout << "The mid point of 1000 - 3000 is: " << result << std::endl;
+
+std::cout << "----" << std::endl;
+
+    std::string part1 = "alpha";
+    std::string part2 = "engine";
+    swapValues(part1, part2);   // 26.
+    std::cout << "\"part1\" new value is: " << part1 << std::endl
+              << "\"part2\" new value is: " << part2 << std::endl;
+    
+std::cout << "----" << std::endl;
+
+    DataHolder<double> specialNumber(3.90, 1.58, 8.92); // 27.
+    std::cout << "The special number value is: " << specialNumber.getValue() << std::endl;
+
+std::cout << "----" << std::endl;
+
+    DataHolder<std::string> robotName("CASIONATOR THE DESTROYER");  // 28.
+    std::cout << "The name of the robot is: " << robotName.getValue() << std::endl;
+
+std::cout << "\t=== End of ToolKit Demo ===" << std::endl;
+}   
 
 int main(){
 
@@ -40,8 +67,11 @@ std::cout << "---" << std::endl;
 
 std::cout << "---" << std::endl;
 
-    DataHolder<std::string> testString("robotics lab");
-    std::cout << "The current value of the string stored is: " << testString.getValue() << std::endl;
+    DataHolder<std::string> testString("robotics lab"); // 24.
+    std::cout << "The current value of the string stored is: " << testString.getValue() << std::endl;   
 
+std::cout << "---" << std::endl;
+
+    runToolKitDemo();   // demo
     return 0;
 }

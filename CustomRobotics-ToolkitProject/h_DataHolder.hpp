@@ -9,7 +9,7 @@ class DataHolder {
     T minValue;
 
     public:
-    DataHolder(T val, T min, T max) : minValue(min), maxValue(max){ // 10.
+    DataHolder(T val, T min, T max) : maxValue(max), minValue(min){ // 10.
         if(val >= min && val <= max){
             storedValue = val;  // 11.
         }else if(val > max){    
